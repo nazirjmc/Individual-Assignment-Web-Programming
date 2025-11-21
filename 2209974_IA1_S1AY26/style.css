@@ -1,0 +1,256 @@
+/* ----------------
+   Root Variables
+------------------- */
+:root {
+    --color-bg: #050505;          /* near black */
+    --color-brown-dark: #4b2e18;
+    --color-brown: #7b4a2e;
+    --color-gold: #d4af37;
+    --color-gold-soft: #f2e3a7;
+    --color-text: #f5f5f5;
+    --color-muted: #b8b8b8;
+
+    --font-heading: "Playfair Display", "Times New Roman", serif;
+    --font-body: "Georgia", "Times New Roman", serif;
+
+    --radius-card: 16px;
+    --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+/* ---------------
+   Base Styles
+------------------ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(circle at top, #1b0f07, var(--color-bg));
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--color-gold);
+    text-decoration: none;
+    transition: color 0.3s ease; /* simple animation */
+}
+
+a:hover {
+    color: var(--color-gold-soft);
+}
+
+/* ----------------
+   Layout
+------------------- */
+header {
+    border-bottom: 1px solid var(--color-brown);
+    padding: 1rem 1.5rem;
+    background: linear-gradient(90deg, #120b06, #261107);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo-area {
+    text-align: center;
+}
+
+.logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 2px solid var(--color-gold);
+    margin: 0 auto 0.5rem auto;
+}
+
+.site-title {
+    font-family: var(--font-heading);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin: 0.25rem 0;
+}
+
+.tagline {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--color-muted);
+}
+
+/* Navigation */
+.main-nav {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.main-nav a {
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-gold);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.main-nav a:hover {
+    background: var(--color-gold);
+    color: #120b06;
+    transform: translateY(-2px);  /* simple hover animation */
+}
+
+/* Sections */
+.section {
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-brown-dark);
+    max-width: 1100px;
+    background: rgba(10, 5, 2, 0.9);
+    box-shadow: var(--shadow-soft);
+}
+
+.section h2 {
+    margin-top: 0;
+    font-family: var(--font-heading);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--color-gold);
+    padding-bottom: 0.4rem;
+}
+
+/* Cards, Lists, Tables */
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    flex: 1 1 250px;
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-brown);
+    padding: 1rem;
+    background: rgba(15, 8, 4, 0.95);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-family: var(--font-heading);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+th, td {
+    border: 1px solid var(--color-brown);
+    padding: 0.5rem;
+}
+
+th {
+    background: rgba(80, 50, 25, 0.7);
+}
+
+/* Profile section */
+.intro-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.profile-image-wrapper {
+    max-width: 220px;
+    justify-self: center;
+}
+
+.profile-image {
+    border-radius: var(--radius-card);
+    border: 2px solid var(--color-gold);
+}
+
+/* Blockquote */
+blockquote {
+    margin: 0;
+    font-style: italic;
+    border-left: 3px solid var(--color-gold);
+    padding-left: 0.75rem;
+}
+
+.quote-attribution {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--color-muted);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid var(--color-brown-dark);
+    font-size: 0.8rem;
+    color: var(--color-muted);
+}
+
+/* Pseudo-class example on buttons/links */
+button,
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--color-gold);
+    background: transparent;
+    color: var(--color-gold-soft);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+    background: var(--color-gold);
+    color: #120b06;
+    transform: translateY(-2px);
+}
+
+/* ---------------
+   Responsive
+------------------ */
+
+/* Mobile-first: min 600px already satisfied by default layout.
+   Desktop layout at min-width: 950px */
+@media (min-width: 950px) {
+    .logo-area {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        column-gap: 1rem;
+    }
+
+    .main-nav {
+        justify-content: flex-end;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1.5fr 1fr;
+        align-items: center;
+    }
+}
